@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>User Engagement Metrics</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      h1 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>User Engagement Metrics by Traffic Source</h1>
+    <table>
+      <tr>
+        <th>Traffic Source</th>
+        <th>Unique Users</th>
+        <th>Avg Session Duration (s)</th>
+        <th>Total Pageviews</th>
+        <th>Bounce Rate</th>
+      </tr>
+      {% for row in data %}
+      <tr>
+        <td>{{ row.traffic_source }}</td>
+        <td>{{ row.unique_users }}</td>
+        <td>{{ row.avg_session_duration }}</td>
+        <td>{{ row.total_pageviews }}</td>
+        <td>{{ row.bounce_rate }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
